@@ -1,0 +1,13 @@
+{% extends 'management/base.html' %} {% load tailwind_filters %} {% block
+content %}
+<section>
+  <h1 class="text-2xl font-bold">Register</h1>
+  <form method="post">
+    {% csrf_token %} {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+  <div class="mt-4">
+    <a href="{% url 'login' %}" class="ml-4">Already have an Account?</a>
+  </div>
+</section>
+{% endblock %}
